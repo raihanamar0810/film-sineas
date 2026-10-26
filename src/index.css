@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #14111f;
+  --color-panel: #1e1a2e;
+  --color-edge: #302a47;
+  --color-paper: #f1ece3;
+  --color-mute: #a69fbb;
+  --color-signal: #3fd8c4;
+  --color-gold: #f5c451;
+}
+
+@layer base {
+  body {
+    @apply bg-ink text-paper;
+  }
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+body:has(dialog[open]) {
+  overflow: hidden;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-signal);
+  outline-offset: 2px;
+}
